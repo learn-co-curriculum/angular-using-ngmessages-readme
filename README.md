@@ -78,7 +78,7 @@ We can use this on different inputs too. For instance, with an email, we get an 
 		minlength="2"
 		required="required" />
 
-	<div ng-messages="form.username.$error">
+	<div ng-messages="form.email.$error">
 	</div>
 </form>
 ```
@@ -131,7 +131,7 @@ We can also then add an `ng-if` to only show the error messages once the user ha
 		minlength="2"
 		required="required" />
 
-	<div ng-messages="form.username.$error" ng-if="form.username.$touched">
+	<div ng-messages="form.email.$error" ng-if="form.email.$touched">
 		<div ng-message="required">Email is required!</div>
 		<div ng-message="minlength">Must be more than 2 characters!</div>
 		<div ng-message="email">Must be a valid email!</div>
@@ -139,4 +139,20 @@ We can also then add an `ng-if` to only show the error messages once the user ha
 </form>
 ```
 
-Awesome!
+Awesome! Let's compare this to what our previous code would've been:
+
+```html
+<div ng-if="form.email.$touched">
+    <div ng-if="form.email.$error.required">
+        Email is required!
+    </div>
+    <div ng-if="form.email.$error.minlength">
+        Email must be more than 2 characters!
+    </div>
+    <div ng-if="form.email.$error.email">
+        Must be a valid email!
+    </div>
+</div>
+```
+
+You'll see we have cut down a lot of repeated code - also if we were to change the name of our input, we'd only have to change it once with `ngMessages` - 3 times (and maybe many more) without it.
