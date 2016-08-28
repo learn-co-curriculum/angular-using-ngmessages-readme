@@ -108,7 +108,7 @@ And now we can simply add more DOM elements for each error message:
 		minlength="2"
 		required="required" />
 
-	<div ng-messages="form.username.$error">
+	<div ng-messages="form.email.$error">
 		<div ng-message="required">Email is required!</div>
 		<div ng-message="minlength">Must be more than 2 characters!</div>
 		<div ng-message="email">Must be a valid email!</div>
@@ -156,3 +156,4 @@ Awesome! Let's compare this to what our previous code would've been:
 ```
 
 You'll see we have cut down a lot of repeated code - also if we were to change the name of our input, we'd only have to change it once with `ngMessages` - 3 times (and maybe many more) without it.
+<p class='util--hide'>View <a href='https://learn.co/lessons/angular-using-ngmessages-readme'>Using Ngmessages </a> on Learn.co and start learning to code for free.</p>
