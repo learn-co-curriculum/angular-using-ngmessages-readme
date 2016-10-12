@@ -2,7 +2,7 @@
 
 ## Overview
 
-When our inputs have lots of validation rules, writing out condition `ng-if` statements for *every* type of validation can be very verbose. This is where a new module comes in - `ngMessages`!
+When our inputs have lots of validation rules, writing out conditional `ng-if` statements for *every* type of validation can be very verbose. This is where a new module comes in - `ngMessages`!
 
 ## Objectives
 
@@ -11,7 +11,7 @@ When our inputs have lots of validation rules, writing out condition `ng-if` sta
 
 ## ngMessages
 
-`ngMessages` is a separate module for Angular. so we need to make sure we require the file and module into our main module.
+`ngMessages` is a separate module for Angular, so we need to make sure we require the file and module in our main module.
 
 ```js
 angular
@@ -24,9 +24,9 @@ And then we're ready to use it!
 
 ## What does it do?
 
-`ngMessages` allows us to take an object, and display different messages depending on what properties exist on that object.
+`ngMessages` allows us to take an object and display different messages depending on what properties exist on that object.
 
-This links in with our `$error` object that we had in the previous README. To refresh your memory, the `$error` object may look something like this, for a field named `username`:
+This links in with our `$error` object that we had in the previous README. To refresh your memory, the `$error` object may look something like this for a field named `username`:
 
 ```js
 {
@@ -52,7 +52,7 @@ Let's pass the `$error` object into `ngMessages`. As a parent component, we use 
 </form>
 ```
 
-Now that we've done that, we can use the directive `ng-message` for each property we want to display errors for. As we've only got the possibility of `required` appearing in our object (as that is the only validation we've defined), we'll have one element:
+Now that we've done that, we can use the directive `ng-message` for each property for which we want to display errors. As we've only got the possibility of `required` appearing in our object (as that is the only validation we've defined), we'll have one element:
 
 ```html
 <form name="form">
@@ -67,7 +67,7 @@ Now that we've done that, we can use the directive `ng-message` for each propert
 </form>
 ```
 
-We can use this on different inputs too. For instance, with an email, we get an `email` property too. We can also add a `minlength` validation:
+We can use this on different inputs too. For instance, with an email, we get an `email` property. We can also add a `minlength` validation:
 
 ```html
 <form name="form">
@@ -156,4 +156,5 @@ Awesome! Let's compare this to what our previous code would've been:
 ```
 
 You'll see we have cut down a lot of repeated code - also if we were to change the name of our input, we'd only have to change it once with `ngMessages` - 3 times (and maybe many more) without it.
+
 <p class='util--hide'>View <a href='https://learn.co/lessons/angular-using-ngmessages-readme'>Using Ngmessages </a> on Learn.co and start learning to code for free.</p>
